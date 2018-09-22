@@ -31,6 +31,23 @@
 
      spinner.success("")
 
+    spinner = TTY::Spinner.new("[:spinner] Populate Comments ...")
+    spinner.auto_spin
+    sleep(1)
+
+    users = User.all.pluck(:id)
+    events = Event.all.pluck(:id)
+
+    5.times do
+      Comment.create!(
+        text: Populator.sentences(1..3),
+        user_id: users[rand(users.size)],
+        event_id: events[rand(events.size)]
+      )
+    end
+
+    spinner.success("")
+
   else
     puts "Você não está em ambiente de desenvolvimento!"
   end
