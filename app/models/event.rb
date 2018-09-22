@@ -4,5 +4,5 @@ class Event < ApplicationRecord
   validates :lat, presence: true
   validates :lng, presence: true
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end

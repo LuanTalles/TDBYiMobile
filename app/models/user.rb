@@ -4,6 +4,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, presence: true
 
-  has_many :comments
-  has_many :reports
+  has_many :comments, dependent: :destroy
+  has_many :reports, dependent: :destroy
 end

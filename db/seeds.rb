@@ -1,6 +1,6 @@
 
   if Rails.env.development?
-    [User, Event].each(&:delete_all)
+    [Report, Comment, User, Event].each(&:delete_all)
 
      spinner = TTY::Spinner.new("[:spinner] Populate User ...")
      spinner.auto_spin
@@ -43,6 +43,22 @@
         text: Populator.sentences(1..3),
         user_id: users[rand(users.size)],
         event_id: events[rand(events.size)]
+      )
+    end
+
+    spinner.success("")
+
+    spinner = TTY::Spinner.new("[:spinner] Populate Reports ...")
+    spinner.auto_spin
+    sleep(1)
+
+    users = User.all.pluck(:id)
+    comments = Comment.all.pluck(:id)
+
+    5.times do
+      Report.create!(
+        user_id: users[rand(users.size)],
+        comment_id: comments[rand(comments.size)]
       )
     end
 
