@@ -5,12 +5,12 @@ class Api::V1::UsersController < Api::V1::ApiController
   def index
     @users = User.all
 
-    render json: {status: 'SUCCESS', message:'Users loaded ...', data:@users},status: :ok
+    # render json: @users
   end
 
   # GET /api/v1/users/1
   def show
-    render json: @user
+    # render json: @user
   end
 
   # POST /api/v1/users

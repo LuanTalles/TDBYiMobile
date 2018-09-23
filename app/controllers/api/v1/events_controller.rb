@@ -3,14 +3,15 @@ class Api::V1::EventsController < Api::V1::ApiController
 
   # GET /api/v1/events
   def index
+    # @events = Event.all.pluck(:name, :description, :lat, :lng)
     @events = Event.all
 
-    render json: @events
+    # render json: @events
   end
 
   # GET /api/v1/events/1
   def show
-    render json: @event
+    # render json: @event
   end
 
   # POST /api/v1/events

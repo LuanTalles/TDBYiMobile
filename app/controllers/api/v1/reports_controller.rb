@@ -3,14 +3,15 @@ class Api::V1::ReportsController < Api::V1::ApiController
 
   # GET /api/v1/reports
   def index
+    # @reports = Report.all.joins(:user, :comment).pluck(:text,:name)
     @reports = Report.all
 
-    render json: @reports
+    # render json: @reports
   end
 
   # GET /api/v1/reports/1
   def show
-    render json: @report
+    # render json: @report
   end
 
   # POST /api/v1/reports

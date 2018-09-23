@@ -3,15 +3,14 @@ class Api::V1::CommentsController < Api::V1::ApiController
 
   # GET /api/v1/comments
   def index
-    # @comments = Comment.all # lists all comments
-    @comments = Comment.where.not(id: Report.all.pluck(:comment_id).uniq) # list only comments that have not been reported
-
-    render json: @comments
+    # list only comments that have not been reported
+    @comments = Comment.where.not(id: Report.all.pluck(:comment_id).uniq)
+    # render json: @comments
   end
 
   # GET /api/v1/comments/1
   def show
-    render json: @comment
+    # render json: @comment
   end
 
   # POST /api/v1/comments
