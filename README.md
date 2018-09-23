@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+* API made in Ruby on Rails 52 and MySQL Database.
 
-* Ruby version
+* This API respond in json format.
 
-* System dependencies
+* Use the Postman application/Chrome Extension to send requisitions for this API. 
 
-* Configuration
+* It's necessary export the variables MYSQL_USERNAME and MYSQL_PASSWORD to connect the MySQL Database, as follows:
 
-* Database creation
+  export MYSQL_USERNAME='your_user_name'
+  export MYSQL_PASSWORD='your_password'
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Make command rails/rake db:seed to populate database.
